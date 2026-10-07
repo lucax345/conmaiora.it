@@ -100,6 +100,10 @@ img, svg { display: block; max-width: 100%; }
 .top li a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 2px; }
 .top .pill { border: 2px solid var(--ink); border-radius: var(--r-pill); padding: 9px 18px; }
 .top .pill:hover { background: var(--ink); color: var(--sun); text-decoration: none; }
+/* le lingue: IT · EN, la lingua della pagina segnata come la pagina attuale */
+.top .lang { display: flex; align-items: center; gap: 2px; }
+.top .lang a, .top .lang b { padding: 10px 6px; }
+.top .lang b { font-weight: 800; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
 
 /* ---------- scene ---------- */
 .scene { position: relative; padding: var(--s-9) var(--pad) var(--s-9); overflow-x: clip; }
@@ -289,6 +293,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px
 .cols ul { margin: 0; padding: 0; list-style: none; max-width: 46ch; }
 .cols li { padding: var(--s-3) 0; border-top: 2px solid currentColor; }
 .cols li:last-child { border-bottom: 2px solid currentColor; }
+.cols .more { margin-top: var(--s-5); }
 .exit .list { max-width: 60ch; }
 .exit .list li { border-color: var(--cream); }
 
@@ -342,8 +347,13 @@ input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px
     radial-gradient(circle at 16px 19px, var(--tomato) 15px, transparent 16px),
     radial-gradient(circle at 48px 19px, var(--cream) 15px, transparent 16px); }
   .top { padding-top: 12px; }
-  .top li:not(:last-child) { display: none; }
+  .top ul { gap: var(--s-3); }
+  .top li:nth-last-child(n+3) { display: none; }
   .top .pill { padding: 8px 16px; }
+  /* sul telefono le lingue salgono in una riga sopra marchio e tasto, così il tasto resta intero */
+  .top { position: relative; padding-top: 40px; }
+  .top .lang { position: absolute; top: 0; right: var(--pad); font-size: var(--t-meta); }
+  .top .lang a, .top .lang b { padding: 12px 4px; }
   .split, .deal, .intro, .cols { grid-template-columns: minmax(0, 1fr); gap: var(--s-6); }
   .split > .text, .split > .art, .split.flip > .text, .split.flip > .art, .deal .offer, .deal form, .intro > *, .cols > div { grid-column: 1; grid-row: auto; }
   .split.flip > .art { order: 2; }
@@ -440,6 +450,18 @@ input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px
 .doc p { max-width: 60ch; }
 .doc p + p { margin-top: var(--s-4); }
 
+/* ---------- Chi siamo e pagina inglese ---------- */
+.facts { margin: var(--s-6) 0 0; max-width: 980px; }
+.facts > div { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 0 28px; align-items: baseline; padding: var(--s-4) 0; border-top: 2px solid currentColor; }
+.facts > div:last-child { border-bottom: 2px solid currentColor; }
+.facts dt { font-weight: 600; }
+.on-dark .facts dt { color: var(--cream-2); }
+.facts dd { margin: 0; font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; font-variation-settings: "wdth" 88; overflow-wrap: anywhere; }
+.facts dd a { text-decoration-thickness: 2px; }
+.founded .sun-clock { top: 30%; font-size: clamp(5rem, 2rem + 6vw, 10rem); }
+.reach { margin-top: var(--s-7); display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4) var(--s-6); }
+.reach p { max-width: 36ch; }
+
 /* ---------- Pagina non trovata ---------- */
 .lost .lede { max-width: 40ch; }
 .lost .sun-clock { top: 30%; font-size: clamp(5rem, 2rem + 6vw, 10rem); }
@@ -448,7 +470,10 @@ input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px
 
 @media (max-width: 860px) {
   .legal-head { padding-top: var(--s-7); padding-bottom: var(--s-7); }
-  .lost .art { display: none; }
+  .lost .art, .founded .art { display: none; }
+  .opening.founded .split { min-height: 0; }
+  .opening.founded .text { padding-bottom: 0; }
+  .facts > div { grid-template-columns: minmax(0, 1fr); gap: var(--s-1); }
   .doc section { grid-template-columns: minmax(0, 1fr); gap: var(--s-3); }
   .doc h2, .doc .body { grid-column: 1; }
 }

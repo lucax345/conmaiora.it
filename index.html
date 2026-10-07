@@ -10,8 +10,12 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="canonical" href="https://conmaiora.it/">
+<link rel="alternate" hreflang="it" href="https://conmaiora.it/">
+<link rel="alternate" hreflang="en" href="https://conmaiora.it/en.html">
+<link rel="alternate" hreflang="x-default" href="https://conmaiora.it/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_GB">
 <meta property="og:site_name" content="Maiora">
 <meta property="og:title" content="Maiora: il sito, le prenotazioni e le risposte ai clienti del tuo ristorante">
 <meta property="og:description" content="Maiora fa il sito al tuo ristorante, tiene le prenotazioni in un'agenda sola e risponde ai clienti con un assistente. Un servizio solo, a Roma per cominciare.">
@@ -24,6 +28,20 @@
 <link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script src="main.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://conmaiora.it/#organization",
+  "name": "Maiora",
+  "url": "https://conmaiora.it",
+  "email": "info@conmaiora.it",
+  "foundingDate": "2026-08",
+  "founder": { "@type": "Person", "name": "Luca Pompei" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Roma", "addressCountry": "IT" },
+  "description": "Maiora fa il sito al ristorante, tiene le prenotazioni in un'agenda sola e risponde ai clienti con un assistente. Un servizio solo, a Roma per cominciare."
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#contenuto">Vai al contenuto</a>
@@ -34,7 +52,9 @@
     <ul>
       <li><a href="come-funziona.html">Come funziona</a></li>
       <li><a href="come-funziona.html#abbonamento">Abbonamento</a></li>
+      <li><a href="chi-siamo.html">Chi siamo</a></li>
       <li><a class="pill" href="#contatto">Fatti richiamare</a></li>
+      <li class="lang"><b aria-current="true">IT</b><span aria-hidden="true">·</span><a href="en.html" hreflang="en" lang="en" aria-label="English">EN</a></li>
     </ul>
   </nav>
 </header>
@@ -230,7 +250,9 @@
     <ul>
       <li><a href="come-funziona.html">Come funziona</a></li>
       <li><a href="come-funziona.html#abbonamento">Abbonamento</a></li>
+      <li><a href="chi-siamo.html">Chi siamo</a></li>
       <li><a href="privacy.html">Privacy e cookie</a></li>
+      <li><a href="en.html" hreflang="en" lang="en">English</a></li>
     </ul>
   </div>
 </footer>
