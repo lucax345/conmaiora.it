@@ -1,0 +1,13 @@
+{
+  "name": "Maiora",
+  "short_name": "Maiora",
+  "lang": "it",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#fed339",
+  "theme_color": "#fed339",
+  "icons": [
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

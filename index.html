@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maiora: il sito, le prenotazioni e le risposte ai clienti del tuo ristorante</title>
+<meta name="description" content="Maiora fa il sito al tuo ristorante, tiene le prenotazioni in un'agenda sola e risponde ai clienti con un assistente. Un servizio solo, a Roma per cominciare.">
+<meta name="theme-color" content="#fed339">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="canonical" href="https://conmaiora.it/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Maiora">
+<meta property="og:title" content="Maiora: il sito, le prenotazioni e le risposte ai clienti del tuo ristorante">
+<meta property="og:description" content="Maiora fa il sito al tuo ristorante, tiene le prenotazioni in un'agenda sola e risponde ai clienti con un assistente. Un servizio solo, a Roma per cominciare.">
+<meta property="og:url" content="https://conmaiora.it/">
+<meta property="og:image" content="https://conmaiora.it/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://conmaiora.it/og.png">
+<link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
+<div class="awning" aria-hidden="true"></div>
+<header class="top">
+  <a class="brand" href="./" aria-label="Maiora, pagina iniziale">Maiora</a>
+  <nav aria-label="Principale">
+    <ul>
+      <li><a href="come-funziona.html">Come funziona</a></li>
+      <li><a href="come-funziona.html#abbonamento">Abbonamento</a></li>
+      <li><a class="pill" href="#contatto">Fatti richiamare</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="contenuto">
+  <!-- 18:30, apertura -->
+  <section class="scene f-sun opening" aria-labelledby="titolo">
+    <div class="wrap split">
+      <div class="text">
+        <p class="clock hour-open" aria-hidden="true">18<span class="sep">:</span>30</p>
+        <h1 class="display" id="titolo"><span class="w">Il sito,</span> <span class="w">le prenotazioni,</span> <span class="w">le risposte</span> <span class="w">ai clienti.</span></h1>
+        <p class="lede"><strong>Maiora fa tutto questo per il tuo ristorante, in un servizio solo.</strong> Tu pensi alla sala: le prenotazioni finiscono in agenda e l'assistente risponde.</p>
+        <a class="cta" href="#contatto">Fatti richiamare</a>
+        <p class="price-line"><b>Un solo abbonamento</b>, mese per mese o l'anno intero. Il&nbsp;preventivo lo prepariamo noi.</p>
+      </div>
+      <div class="art stage" role="img" aria-label="Il telefono del titolare con l'app di Maiora: stasera in sala, una nuova prenotazione dal sito e l'elenco di chi arriva. Dati di esempio.">
+        <div class="sun"></div>
+        <span class="sun-clock" aria-hidden="true">18<span class="sep">:</span>30</span>
+        <svg class="glass l" viewBox="0 0 92 200" aria-hidden="true"><path d="M10 6h72c0 46-12 74-36 78C22 80 10 52 10 6z"/><rect x="43" y="82" width="6" height="96"/><rect x="20" y="176" width="52" height="10" rx="5"/></svg>
+        <svg class="glass r" viewBox="0 0 92 200" aria-hidden="true"><path d="M10 6h72c0 46-12 74-36 78C22 80 10 52 10 6z"/><rect x="43" y="82" width="6" height="96"/><rect x="20" y="176" width="52" height="10" rx="5"/></svg>
+        <div class="phone" aria-hidden="true">
+          <div class="screen">
+            <p class="who">Trattoria del Borgo · esempio</p>
+            <p class="title">Stasera in sala</p>
+            <p class="note"><b>Nuova dal sito</b><span>Laura Bassi, 4&nbsp;persone alle 20:00. Salvata in agenda.</span></p>
+            <div class="row"><span class="t">19:30</span><span class="n">Francesca Riva<small>2&nbsp;persone · sito</small></span><span class="s">Confermata</span></div>
+            <div class="row"><span class="t">19:45</span><span class="n">Matteo Fontana<small>5&nbsp;persone · telefono</small></span><span class="s">Confermata</span></div>
+            <div class="row"><span class="t">20:30</span><span class="n">Silvia Marino<small>8&nbsp;persone · chat</small></span><span class="s alert">Da verificare</span></div>
+            <div class="row"><span class="t">21:00</span><span class="n">Valentina Rossi<small>2&nbsp;persone · telefono</small></span><span class="s">Confermata</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 19:40, le prenotazioni -->
+  <section class="scene f-coral" data-turn style="--prev-field: var(--sun); --prev-ink: var(--ink)" aria-labelledby="h-prenotazioni">
+    <div class="wrap split">
+      <div class="text">
+        <p class="clock" data-from="18:30">19:40</p>
+        <h2 id="h-prenotazioni">Squilla il telefono mentre stai impiattando.</h2>
+        <p>Dall'altra parte c'è una coppia che chiede se alle nove c'è posto. Intanto qualcuno prenota dal sito per sabato, e in chat arriva una domanda sugli orari.</p>
+        <h3>Con Maiora finiscono tutte nella stessa agenda.</h3>
+        <ul class="list">
+          <li><b>Dal sito</b>, con il modulo o la chat: entrano da sole.</li>
+          <li><b>Al telefono o al banco</b>: le segni tu o il personale, nella stessa agenda.</li>
+          <li><b>Su WhatsApp</b>: <em class="later">in arrivo.</em></li>
+          <li>La conferma al cliente parte solo quando il tavolo è davvero salvato.</li>
+        </ul>
+      </div>
+      <div class="art">
+        <svg class="wallphone" viewBox="0 0 240 700" aria-hidden="true">
+          <path class="cord" d="M44 70c-14 8 14 16 0 24s14 16 0 24 14 16 0 24 14 16 0 24 14 16 0 24 14 16 0 24 14 16 0 24 14 16 0 24c-8 50 30 70 24 130s-34 90-14 150 24 70 10 110"/>
+          <rect class="body" x="50" y="64" width="140" height="210" rx="30"/>
+          <circle class="dial" cx="120" cy="164" r="54"/>
+          <g class="holes"><circle cx="120" cy="126" r="8"/><circle cx="146" cy="136" r="8"/><circle cx="157" cy="162" r="8"/><circle cx="148" cy="188" r="8"/><circle cx="122" cy="200" r="8"/><circle cx="96" cy="191" r="8"/><circle cx="84" cy="166" r="8"/><circle cx="92" cy="140" r="8"/></g>
+          <circle class="hub" cx="120" cy="164" r="17"/>
+          <rect class="plate" x="92" y="236" width="56" height="16" rx="8"/>
+          <g class="handset"><rect x="66" y="30" width="108" height="20" rx="10"/><rect x="24" y="22" width="64" height="40" rx="18"/><rect x="152" y="22" width="64" height="40" rx="18"/></g>
+          <g class="waves"><path d="M18 10a40 40 0 0 0-12 26M32 0a58 58 0 0 0-26 18"/><path d="M222 10a40 40 0 0 1 12 26M208 0a58 58 0 0 1 26 18"/></g>
+        </svg>
+        <div class="sheet" role="img" aria-label="L'agenda di Maiora per la cena: sette prenotazioni e ventisei coperti, arrivate dal sito, dal telefono e dalla chat. Dati di esempio.">
+          <div class="head" aria-hidden="true"><b>Cena</b><span>19:00–23:30 · 7 prenotazioni · 26 coperti · esempio</span></div>
+          <div aria-hidden="true">
+            <div class="row"><span class="t">19:30</span><span class="n">Francesca Riva<small>2&nbsp;persone · sito · tavolo&nbsp;3</small></span><span class="s">Confermata</span></div>
+            <div class="row"><span class="t">19:45</span><span class="n">Matteo Fontana<small>5&nbsp;persone · telefono · tavolo&nbsp;11</small></span><span class="s">Confermata</span></div>
+            <div class="row"><span class="t">20:00</span><span class="n">Laura Bassi<small>4&nbsp;persone · sito · tavolo&nbsp;7</small></span><span class="s alert">Da verificare</span></div>
+            <div class="row"><span class="t">20:30</span><span class="n">Silvia Marino<small>8&nbsp;persone · chat · tavolo&nbsp;21</small></span><span class="s alert">Da verificare</span></div>
+            <div class="row"><span class="t">20:45</span><span class="n">Andrea Greco<small>3&nbsp;persone · sito · tavolo&nbsp;6</small></span><span class="s">Confermata</span></div>
+            <div class="row"><span class="t">21:00</span><span class="n">Valentina Rossi<small>2&nbsp;persone · telefono · tavolo&nbsp;4</small></span><span class="s">Confermata</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 21:15, l'assistente -->
+  <section class="scene f-sky" data-turn style="--prev-field: var(--coral); --prev-ink: var(--ink)" aria-labelledby="h-assistente">
+    <div class="wrap split flip">
+      <div class="text">
+        <p class="clock" data-from="19:40">21:15</p>
+        <h2 id="h-assistente">Sei in sala. Ai clienti risponde l'assistente.</h2>
+        <p>È l'assistente AI del tuo ristorante, e si presenta così. Risponde sul sito su orari, menu e prenotazioni, con le informazioni che hai approvato tu, e prenota direttamente in agenda.</p>
+        <ul class="list" style="margin-top: 32px">
+          <li><b>Non inventa.</b> Su allergeni, prezzi o disponibilità che non conosce, passa la parola al personale.</li>
+          <li><b>Quando serve una persona</b>, la conversazione arriva a te: la prendi in carico e rispondi.</li>
+        </ul>
+      </div>
+      <div class="art">
+        <svg class="crescent" viewBox="0 0 200 200" aria-hidden="true"><path d="M150 26A92 92 0 1 0 176 150 74 74 0 1 1 150 26z"/></svg>
+        <figure class="chat" aria-label="Una conversazione di esempio nella chat del sito">
+          <p class="who">Chat del sito · Trattoria del Borgo · esempio</p>
+          <p class="bubble guest">Buonasera, domani sera avete posto per sei? Una di noi è celiaca.</p>
+          <p class="bubble bot"><small>Assistente</small>Buonasera, domani alle 20:30 c'è un tavolo per sei. Per il senza glutine ti risponde il personale del ristorante. Intanto ti tengo il tavolo?</p>
+          <p class="bubble guest">Sì, a nome Ferri.</p>
+          <p class="state"><b>Prenotazione salvata</b> · domanda sul glutine passata al personale</p>
+        </figure>
+        <svg class="bistro" viewBox="0 0 320 170" aria-hidden="true">
+          <g class="chair"><path d="M30 20c-2 30 0 60 6 86h12c-4-26-6-54-4-82z"/><rect x="34" y="96" width="62" height="12" rx="6"/><rect x="40" y="104" width="8" height="64" rx="4"/><rect x="84" y="104" width="8" height="64" rx="4"/></g>
+          <g class="table"><ellipse cx="160" cy="70" rx="70" ry="13"/><rect x="155" y="74" width="10" height="84" rx="5"/><ellipse cx="160" cy="162" rx="40" ry="7"/></g>
+          <g class="chair"><path d="M290 20c2 30 0 60-6 86h-12c4-26 6-54 4-82z"/><rect x="224" y="96" width="62" height="12" rx="6"/><rect x="228" y="104" width="8" height="64" rx="4"/><rect x="272" y="104" width="8" height="64" rx="4"/></g>
+          <g class="glasses"><rect x="132" y="38" width="12" height="22" rx="3"/><rect x="176" y="38" width="12" height="22" rx="3"/><circle cx="160" cy="54" r="7"/></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 22:30, il sito -->
+  <section class="scene f-cobalt on-dark" data-turn style="--prev-field: var(--sky); --prev-ink: var(--ink)" aria-labelledby="h-sito">
+    <div class="wrap split">
+      <div class="text">
+        <p class="clock" data-from="21:15">22:30</p>
+        <h2 id="h-sito">Il sito lo facciamo noi, e lo cambi scrivendo come parli.</h2>
+        <p class="soft">Menu, orari, foto e la storia del locale, in un sito veloce da leggere sul telefono, con il modulo per prenotare.</p>
+        <ol class="steps">
+          <li><b>Scrivi cosa cambiare</b>dalla chat di Telegram o dall'app.</li>
+          <li><b>Maiora prepara la modifica</b>e ti mostra l'anteprima.</li>
+          <li><b>Approvi tu</b>e solo allora va online. Se è per un periodo, alla fine torna com'era.</li>
+        </ol>
+        <p class="aside">Ogni sei mesi puoi chiedere un sito tutto nuovo, già compreso.</p>
+      </div>
+      <div class="art">
+        <svg class="board" viewBox="0 0 300 780" aria-hidden="true">
+          <rect class="leg" x="58" y="300" width="16" height="480" rx="8" transform="rotate(3 66 300)"/>
+          <rect class="leg" x="226" y="300" width="16" height="480" rx="8" transform="rotate(-3 234 300)"/>
+          <rect class="frame" x="10" y="10" width="280" height="380" rx="12"/>
+          <rect class="slate" x="28" y="28" width="244" height="344" rx="6"/>
+          <text class="chalk-title" x="150" y="100" text-anchor="middle">Menu</text>
+          <rect class="chalk" x="66" y="122" width="168" height="6" rx="3"/>
+          <path class="chalk" d="M70 222c28-40 88-46 126-8l30-26v72l-30-26c-38 38-98 32-126-12z"/>
+          <circle class="slate" cx="180" cy="210" r="6"/>
+          <rect class="chalk" x="66" y="296" width="110" height="6" rx="3"/><rect class="chalk" x="196" y="296" width="38" height="6" rx="3"/>
+          <rect class="chalk" x="66" y="322" width="84" height="6" rx="3"/><rect class="chalk" x="196" y="322" width="38" height="6" rx="3"/>
+        </svg>
+        <div class="phone chat-phone" role="img" aria-label="La chat con Maiora: il titolare chiede il menu di pesce per il fine settimana, Maiora prepara l'anteprima e chiede se pubblicarla.">
+          <div class="screen mchat" aria-hidden="true">
+            <p class="who">Chat con Maiora</p>
+            <p class="bubble owner">Da venerdì a domenica metti il menu di pesce, poi torna quello di sempre.</p>
+            <p class="bubble maiora"><small>Maiora</small>Ecco l'anteprima: menu di pesce da venerdì 9 a domenica 11 ottobre, da lunedì 12 torna il menu di sempre. Lo pubblico?</p>
+            <div class="fake-btns"><span>Vedi l'anteprima</span><span class="go">Approva</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 23:40, il brindisi -->
+  <section class="scene f-night on-dark toast" data-turn style="--prev-field: var(--cobalt); --prev-ink: var(--cream)" id="contatto" aria-labelledby="h-brindisi">
+    <div class="wrap">
+      <p class="clock" data-from="22:30">23:40</p>
+      <div class="toast-head">
+        <div class="cheers" aria-hidden="true">
+          <svg class="glass l" viewBox="0 0 92 200"><path d="M10 6h72c0 46-12 74-36 78C22 80 10 52 10 6z"/><rect x="43" y="82" width="6" height="96"/><rect x="20" y="176" width="52" height="10" rx="5"/><path class="drink" d="M14 30h64c-3 30-14 44-32 47C28 74 17 60 14 30z"/></svg>
+          <svg class="glass r" viewBox="0 0 92 200"><path d="M10 6h72c0 46-12 74-36 78C22 80 10 52 10 6z"/><rect x="43" y="82" width="6" height="96"/><rect x="20" y="176" width="52" height="10" rx="5"/><path class="drink" d="M14 30h64c-3 30-14 44-32 47C28 74 17 60 14 30z"/></svg>
+        </div>
+        <div>
+          <h2 class="big" id="h-brindisi">Ad maiora!</h2>
+          <p>La cucina è chiusa, si brinda. Parliamo del tuo locale?</p>
+        </div>
+      </div>
+      <div class="deal">
+        <div class="offer">
+          <p class="amount">Un solo abbonamento, <span>insieme al sito.</span></p>
+          <p>Dentro ci sono il sito con le modifiche di ogni giorno, l'agenda delle prenotazioni e l'assistente. Lo paghi mese per mese oppure l'anno intero.</p>
+          <p>Il preventivo lo prepariamo noi, dopo averti sentito, e paghi solo quando lo accetti.</p>
+          <p class="fine soft">Il periodo pagato parte quando il servizio si accende.</p>
+          <a class="more" href="come-funziona.html#abbonamento">Cosa comprende, nel dettaglio</a>
+          <p class="write">Preferisci scrivere? <a href="mailto:info@conmaiora.it">info@conmaiora.it</a></p>
+        </div>
+        <form id="richiamo" action="mailto:info@conmaiora.it" method="post" enctype="text/plain" aria-labelledby="form-titolo">
+          <h3 id="form-titolo" style="margin:0">Fatti richiamare</h3>
+          <div class="field"><label for="nome">Nome e cognome</label><input id="nome" name="nome" autocomplete="name" required aria-describedby="nome-err"><p class="err" id="nome-err"></p></div>
+          <div class="field"><label for="locale">Il tuo ristorante</label><p class="hint" id="locale-hint">Nome e quartiere</p><input id="locale" name="locale" autocomplete="organization" required aria-describedby="locale-hint locale-err"><p class="err" id="locale-err"></p></div>
+          <div class="two">
+            <div class="field"><label for="telefono">Telefono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="telefono-err"><p class="err" id="telefono-err"></p></div>
+            <div class="field"><label for="quando">Quando ti chiamiamo?</label><select id="quando" name="quando"><option>In mattinata</option><option>Nel primo pomeriggio</option><option selected>Quando vuoi</option></select></div>
+          </div>
+          <div class="field"><label for="messaggio">Vuoi dirci qualcosa? <span class="soft">(facoltativo)</span></label><textarea id="messaggio" name="messaggio" rows="3"></textarea></div>
+          <div class="form-foot">
+            <button class="cta" type="submit">Fatti richiamare</button>
+            <p>Si apre la tua app di posta con il messaggio già scritto.</p>
+          </div>
+          <p class="status" id="stato" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><b>Maiora</b> · <a href="mailto:info@conmaiora.it">info@conmaiora.it</a> · Per i ristoranti, a cominciare da Roma. © 2026 Maiora</p>
+    <ul>
+      <li><a href="come-funziona.html">Come funziona</a></li>
+      <li><a href="come-funziona.html#abbonamento">Abbonamento</a></li>
+      <li><a href="privacy.html">Privacy e cookie</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
