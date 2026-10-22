@@ -1,0 +1,37 @@
+.error-page{position:relative;isolation:isolate;min-height:100svh}
+.error-backdrop{position:absolute;z-index:-1;inset:0;overflow:clip;pointer-events:none;mask-image:linear-gradient(to bottom,transparent,#000 10%,#000 85%,transparent)}
+.error-art-side{position:absolute;top:0;bottom:0;width:38%;overflow:clip}
+.error-art-left{left:0;mask-image:linear-gradient(to right,#000 48%,transparent)}
+.error-art-right{right:0;mask-image:linear-gradient(to left,#000 48%,transparent)}
+.error-art-side .painting{height:100%;width:auto;opacity:.52}
+.error-art-left .painting{left:0}.error-art-right .painting{right:0}
+.error-main{min-height:calc(100svh - 112px);padding:145px var(--gutter) 45px;display:flex;align-items:center;justify-content:center;text-align:center}
+.error-copy{width:100%;max-width:760px}
+.error-code{font:400 clamp(120px,12vw,175px)/.8 var(--serif);letter-spacing:-.055em;margin:0 0 28px}
+.error-copy .section-label{color:var(--coral);margin-bottom:20px}
+.error-copy h1{font:400 clamp(48px,4.8vw,72px)/.98 var(--serif);letter-spacing:-.025em}
+.error-description{max-width:435px;margin:23px auto 0;font-size:16px;line-height:1.7}
+.error-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:14px 27px;margin-top:28px}
+.error-footer{position:relative;text-align:center;padding:10px var(--gutter) 30px;color:var(--muted)}
+.error-footer>p{font:italic 21px/1.4 var(--serif)}
+.error-footer>div{display:flex;justify-content:center;gap:24px;margin-top:10px;align-items:center;font:400 11px/1.5 var(--ui)}
+.error-footer a{display:inline-block;padding:8px 0;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#8b744d80}
+.error-footer a:hover{color:var(--coral)}
+@media(max-width:680px){
+ .error-main{min-height:calc(100svh - 102px);padding:130px 28px 28px}
+ .error-code{font-size:120px;margin-bottom:24px}
+ .error-copy .section-label{font-size:10px;margin-bottom:18px}
+ .error-copy h1{font-size:clamp(48px,13vw,60px)}
+ .error-description{font-size:15px;max-width:330px;margin-top:20px}
+ .error-actions{gap:11px 22px;margin-top:25px}
+ .error-actions .button{font-size:13px;gap:20px;padding-inline:22px}
+ .error-actions .text-link{font-size:13px}
+ .error-backdrop{top:115px}
+ .error-art-side{width:56%}
+ .error-art-side .painting{opacity:.4}
+ .error-art-left{mask-image:linear-gradient(to right,#000 32%,transparent)}
+ .error-art-right{mask-image:linear-gradient(to left,#000 32%,transparent)}
+ .error-footer{padding:10px 22px 25px}
+ .error-footer>p{font-size:19px}
+}
+@media(forced-colors:active){.error-backdrop{display:none}}

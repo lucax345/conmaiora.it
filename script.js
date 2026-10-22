@@ -1,3 +1,10 @@
+/* Blobatar 2.7.0, MIT, Copyright (c) 2026 Alain. Local classic-script packaging. */
+(()=>{
+var xe=110,pe=1.6,de=0.55,fe=0.15;var be=0.01,ae=(e)=>e*e*(3-2*e),ce=(e,n,a)=>Math.min(a,Math.max(n,e)),ie=(e,n=110)=>n<=0?1:1-Math.exp(-e/n);function le(e,n){let a=n*(e/100);return a>0?ce(0.15/a,0.002,0.06):0.06}var D=0.97,me=4,oe=(e,n,a)=>{let r=e*e+n*n;if(r<0.000000001)return{sx:1,sy:1,sh:0};let h=Math.max(0,a);return{sx:(h*e*e+n*n)/r,sy:(h*n*n+e*e)/r,sh:(h-1)*e*n/r}};function ue(e,n,a){let r=e.x*e.x+e.y*e.y,h=r>1?1/Math.sqrt(r):1,y=e.x*h,m=e.y*h,E=Math.sqrt(Math.max(0,1-y*y-m*m)),g=Math.cos(n),S=Math.sin(n),f=y*g+E*S,P=E*g-y*S,b=Math.cos(a),i=Math.sin(a),c=m*b+P*i,o=P*b-m*i,s=Math.hypot(f,c),l=o<=0||s>D,M=l?D/(s||1):1,d=f*M,x=c*M,G=l?Math.sqrt(1-D*D):o,u=oe(y,m,E),v=oe(d,x,G);return{dx:d-e.x,dy:x-e.y,sx:Math.min(1,v.sx/(u.sx||1)),sy:Math.min(1,v.sy/(u.sy||1)),t:me*(v.sh-u.sh)}}function he(e){let n=Math.hypot(e.dx,e.dy),a=e.radius>0?ae(Math.min(1,n/(e.radius*0.55))):1,r=(e.gain??1)*a,h=n>0?e.dx/n*r:0,y=n>0?e.dy/n*r:0,m=Math.hypot(h-e.x,y-e.y)>(e.snap??1.6)?1:e.k;return{x:e.x+(h-e.x)*m,y:e.y+(y-e.y)*m,tx:h,ty:y,f:m}}function ye(e){let n=e.querySelector(".mo-bob > g:not(.mo-eyes)"),a=[...e.querySelectorAll(".mo-eye")];if(!n||!a.length)return null;try{let r=n.getBBox(),h=[...n.querySelectorAll("path,circle")],y=r.x+r.width/2,m=r.y+r.height/2,E=(o,s,l)=>h.some((M)=>M.isPointInFill(new DOMPoint(y+o*r.width/2*s,m+o*r.height/2*l))),g=1;for(let o=0;o<16;o++){let s=o/16*Math.PI*2,l=Math.cos(s),M=Math.sin(s);if(E(1,l,M))continue;let d=0,x=1;for(let G=0;G<12;G++){let u=(d+x)/2;if(E(u,l,M))d=u;else x=u}g=Math.min(g,d)}let S=0,f=0,P=a.map((o)=>{let s=o.getBBox();return S=Math.max(S,s.width/2),f=Math.max(f,s.height/2),{x:s.x+s.width/2-y,y:s.y+s.height/2-m}}),b=Math.max(1,r.width/2*g-S),i=Math.max(1,r.height/2*g-f),c=0;for(let o of P)c=Math.max(c,Math.hypot(o.x/b,o.y/i));if(c>0.85)b*=c/0.85,i*=c/0.85;return{marks:P.map((o)=>({x:o.x/b,y:o.y/i})),rx:b,ry:i}}catch{return null}}function Me(e,n={}){let a=matchMedia("(hover: hover) and (pointer: fine)"),r=matchMedia("(prefers-reduced-motion: reduce)"),h=n.settle??110,y=n.snap??1.6,m=0,E=0,g=1,S=1,f=0,P=-1e6,b=-1e6,i=0,c=0,o=0,s=0,l=0,M=0,d=0,x=0,G=!1,u=!1,v=null,k=null,N=!1,B=1,p=e,R=[],_=[],X=50,C=50,Z=0,U=0,Y=()=>{let t=ye(e);if(!t)return;_=t.marks,X=t.rx,C=t.ry},J=()=>{p=e.querySelector(".mo-eyes")??e,R=[...e.querySelectorAll(".mo-eye")],Y()},K=()=>{if(!k)return;let t=k.getBoundingClientRect();v={x:t.left+t.width/2,y:t.top+t.height/2}},j=()=>{K();let t=e.getBoundingClientRect();if(m=t.left+t.width/2,E=t.top+t.height/2,g=Math.max(1,Math.min(t.width,t.height)/2),S=Math.max(1,t.width),f=parseFloat(getComputedStyle(p).getPropertyValue("--mo-track-travel"))||0,!_.length)Y();Z=f/X,U=f/C},Q=(t)=>{x=0;let H=d?Math.min(t-d,64):16;if(d=t,!p.isConnected)J(),j(),o=s=1/0;let re=ie(H,h),L=he({x:i,y:c,dx:N?0:(v?v.x:P)-m,dy:N?0:(v?v.y:b)-E,radius:g,k:re,snap:y});i=L.x,c=L.y;let O=le(S,f),V=!1;if(Math.abs(L.tx-i)<=O&&Math.abs(L.ty-c)<=O)i=L.tx,c=L.ty;else V=!0;if(l+=(B-l)*re,Math.abs(B-l)<=0.01)l=B;else V=!0;if(Math.abs(l-M)>0.01)M=l,e.style.setProperty("--mo-track-hold",l.toFixed(3)),V=!0;if(Math.abs(i-o)>O||Math.abs(c-s)>O){o=i,s=c,p.style.setProperty("--mo-track-x",i.toFixed(3)),p.style.setProperty("--mo-track-y",c.toFixed(3));for(let I=0;I<_.length&&I<R.length;I++){let T=ue(_[I],i*Z,c*U),q=I+1;p.style.setProperty(`--mo-gz-dx${q}`,(T.dx*X).toFixed(3)),p.style.setProperty(`--mo-gz-dy${q}`,(T.dy*C).toFixed(3)),p.style.setProperty(`--mo-gz-sx${q}`,T.sx.toFixed(4)),p.style.setProperty(`--mo-gz-sy${q}`,T.sy.toFixed(4)),p.style.setProperty(`--mo-gz-t${q}`,T.t.toFixed(3))}V=!0}if(V||G)G=!1,x=requestAnimationFrame(Q);else d=0},w=()=>{if(!u)return;if(G=!0,!x)x=requestAnimationFrame(Q)},W=(t)=>{P=t.clientX,b=t.clientY,w()},ee=()=>{P=-1e6,b=-1e6,w()},z=()=>{j(),w()},A=new ResizeObserver(z),se=()=>{if(u)return;if(u=!0,J(),j(),A.observe(e),k)A.observe(k);addEventListener("pointermove",W,{passive:!0}),addEventListener("pointerleave",ee,{passive:!0}),addEventListener("scroll",z,{passive:!0,capture:!0}),addEventListener("resize",z,{passive:!0}),w()},te=()=>{if(!u)return;if(u=!1,A.disconnect(),removeEventListener("pointermove",W),removeEventListener("pointerleave",ee),removeEventListener("scroll",z,{capture:!0}),removeEventListener("resize",z),x)cancelAnimationFrame(x);x=0,d=0,i=c=o=s=l=M=0,p.style.removeProperty("--mo-track-x"),p.style.removeProperty("--mo-track-y");for(let t=1;t<=R.length;t++)for(let H of["dx","dy","sx","sy","t"])p.style.removeProperty(`--mo-gz-${H}${t}`);e.style.removeProperty("--mo-track-hold")},F=()=>a.matches&&!r.matches?se():te();a.addEventListener("change",F),r.addEventListener("change",F),F();let ne=(t)=>{if(k&&u)A.unobserve(k);if(k=v=null,N=t===null||t==="rest",B=t===null?0:1,typeof t!=="object"||!t)return;if("getBoundingClientRect"in t){if(k=t,u)A.observe(t);K();return}v={x:t.x,y:t.y}};return ne(n.target??null),{lookAt:(t)=>{ne(t),w()},remeasure:z,stop:()=>{te(),a.removeEventListener("change",F),r.removeEventListener("change",F)}}}
+window.BlobatarGaze={gaze:Me};
+})();
+
+;
 (() => {
   'use strict';
 
@@ -27,6 +34,15 @@
     liveAnimations.add(animation);
     animation.finished.catch(() => {}).finally(() => liveAnimations.delete(animation));
     return animation;
+  }
+
+  function cancelTransientAnimations(keepPrepared = false) {
+    const prepared = keepPrepared ? new Set([...entranceAnimations.values()].filter(animation => animation.playState === 'paused')) : new Set();
+    liveAnimations.forEach(animation => {
+      if (prepared.has(animation)) return;
+      animation.cancel();
+      liveAnimations.delete(animation);
+    });
   }
 
   function clearAvatarReaction() {
@@ -59,10 +75,9 @@
     motionToggle.setAttribute('aria-pressed', String(enabled));
     motionToggle.title = reducedMotion.matches ? 'Movimento ridotto dalle preferenze del dispositivo' : enabled ? 'Metti in pausa le animazioni' : 'Attiva le animazioni';
     if (!canAnimate()) {
-      liveAnimations.forEach(animation => animation.cancel());
-      liveAnimations.clear();
+      cancelTransientAnimations(document.hidden && enabled && !forcedColors.matches);
     }
-    if (!canAnimate() || forcedColors.matches) entranceAnimations.forEach(animation => animation.cancel());
+    if (!enabled || forcedColors.matches) entranceAnimations.forEach(animation => animation.cancel());
     syncAvatar();
     cloudRenderer?.sync();
   }
@@ -102,7 +117,7 @@
     clearAvatarReaction();
     gaze?.stop();
     gaze = null;
-    liveAnimations.forEach(animation => animation.cancel());
+    cancelTransientAnimations(userMotion && !reducedMotion.matches && !forcedColors.matches);
   });
   window.addEventListener('pageshow', syncMotion);
   avatarButton.addEventListener('click', () => greet(true));
@@ -137,7 +152,7 @@
   }
   const heroScene = document.querySelector('.hero');
   const skyScenes = [...heroScene.querySelectorAll('.sky-scene')];
-  const mobileSky = window.matchMedia('(max-width: 680px)');
+  const mobileViewport = window.matchMedia('(max-width: 680px)');
   const cloudImage = new Image();
   const cloudSurfaces = skyScenes.map(scene => {
     const canvas = scene.querySelector('.sky-cloud-canvas');
@@ -154,6 +169,10 @@
     const {width, height} = heroScene.getBoundingClientRect();
     cloudSurfaces.forEach(surface => {
       const sceneWidth = surface.scene.closest('.hero-mobile-sky') ? width * 1.55 : width;
+      const ratio = window.devicePixelRatio || 1;
+      const geometryKey = `${sceneWidth}:${height}:${ratio}:${cloudImage.naturalWidth}:${cloudImage.complete}`;
+      if (surface.geometryKey === geometryKey) return;
+      surface.geometryKey = geometryKey;
       const scale = Math.max(sceneWidth / 1774, height / 887);
       const x = (sceneWidth - 1774 * scale) / 2;
       const y = (height - 887 * scale) / 2;
@@ -164,7 +183,6 @@
       const top = Math.floor(y + 76.2 * scale) - 2;
       const canvasWidth = Math.ceil(x + 1151.6 * scale) + 2 - left;
       const canvasHeight = Math.ceil(y + 172.5 * scale) + 2 - top;
-      const ratio = window.devicePixelRatio || 1;
       Object.assign(surface, {scale, x, y, left, top, width:canvasWidth, height:canvasHeight});
       Object.assign(surface.canvas.style, {left:`${left}px`, top:`${top}px`, width:`${canvasWidth}px`, height:`${canvasHeight}px`});
       surface.canvas.width = Math.ceil(canvasWidth * ratio);
@@ -205,7 +223,7 @@
     if (!cloudsCanRun()) { cloudLastTime = null; return; }
     if (cloudLastTime !== null) cloudTime = (cloudTime + time - cloudLastTime) % 64000;
     cloudLastTime = time;
-    paintCloud(cloudSurfaces[mobileSky.matches ? 1 : 0]);
+    paintCloud(cloudSurfaces[mobileViewport.matches ? 1 : 0]);
     cloudFrame = requestAnimationFrame(cloudTick);
   }
 
@@ -239,48 +257,12 @@
   }
   watchCloudResolution();
 
-  prepareLayers('.hero', ['assets/16-dettagli-animabili.webp','assets/19-papavero-destro.webp','assets/20-papavero-basso.webp','assets/21-fondo-brezza.webp','assets/24-raccordo-stelo.webp','assets/25-bocciolo.webp','assets/26-rametto.webp','assets/27-fondo-bocciolo-rametto.webp','assets/29-bocciolo-alto.webp','assets/30-fondo-cielo-bocciolo.webp','assets/31-papavero-sinistro.webp','assets/33-fondo-papavero-pulito.webp','assets/34-carta-raccordo-papavero.webp','assets/35-bocciolo-sinistro-alto.webp','assets/36-bocciolo-destro-alto.webp','assets/37-fondo-boccioli-alti.webp']);
+  prepareLayers('.hero', ['assets/16-dettagli-animabili.webp','assets/19-papavero-destro.webp','assets/20-papavero-basso.webp','assets/21-fondo-brezza.webp','assets/24-raccordo-stelo.webp','assets/25-bocciolo.webp','assets/26-rametto.webp','assets/27-fondo-bocciolo-rametto.webp','assets/29-bocciolo-alto.webp','assets/30-fondo-cielo-bocciolo-opt.webp','assets/31-papavero-sinistro.webp','assets/33-fondo-papavero-pulito-opt.webp','assets/34-carta-raccordo-papavero-opt.webp','assets/35-bocciolo-sinistro-alto.webp','assets/36-bocciolo-destro-alto.webp','assets/37-fondo-boccioli-alti-opt.webp']);
 
   prepareLayers('.chapter-paint', ['assets/22-foglia-vite.webp','assets/23-fondo-vite.webp']);
   prepareLayers('.process-art-four', ['assets/14-il-percorso.webp']);
   prepareLayers('.fountain-scene', ['assets/13-estensione-acqua.webp']);
   prepareLayers('.footer-fountain-scene', ['assets/11-giardino-romano.webp']);
-
-  const menu = document.getElementById('mobile-menu');
-  const menuToggle = document.querySelector('.menu-toggle');
-  const closeMenu = () => { if (menu.open) menu.close(); };
-  menuToggle.addEventListener('click', () => {
-    menu.showModal();
-    animate(menu, [{opacity:.7,transform:'translateY(-6px) scale(.985)'},{opacity:1,transform:'none'}], {duration:190,easing:'cubic-bezier(.2,.8,.2,1)'});
-    menuToggle.setAttribute('aria-expanded', 'true');
-  });
-  document.querySelector('.menu-close').addEventListener('click', closeMenu);
-  menu.addEventListener('click', event => { if (event.target === menu) closeMenu(); });
-  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-  menu.addEventListener('close', () => menuToggle.setAttribute('aria-expanded', 'false'));
-  window.matchMedia('(min-width: 681px)').addEventListener('change', event => {
-    if (event.matches) closeMenu();
-  });
-
-  // La stessa etichetta resta accessibile; la seconda serve solo al movimento.
-  document.querySelectorAll('.button,.desktop-nav a,.text-link').forEach(control => {
-    const textNodes = [...control.childNodes].filter(node => node.nodeType === Node.TEXT_NODE);
-    const label = textNodes.map(node => node.textContent).join('').trim();
-    if (!label) return;
-    const clip = document.createElement('span');
-    clip.className = 'fx-label';
-    const main = document.createElement('span');
-    main.className = 'fx-label-main';
-    main.textContent = label;
-    const alternate = document.createElement('span');
-    alternate.className = 'fx-label-alt';
-    alternate.setAttribute('aria-hidden', 'true');
-    alternate.textContent = label;
-    clip.append(main, alternate);
-    textNodes.forEach(node => node.remove());
-    control.prepend(clip);
-    control.classList.add('fx-control');
-  });
 
   // Section changes are one-time compositions; the painted backgrounds stay fixed.
   function setupSectionEntrances() {
@@ -306,36 +288,54 @@
     add('.contact-copy', pigment, 650);
     add('.contact-copy h2', [{transform:'translateY(14px)'},{transform:'none'}]);
     add('.contact-sheet', [{opacity:.85},{opacity:1}], 750);
-    const seen = new WeakSet();
     const initialAnchor = document.getElementById(location.hash.slice(1))?.closest('section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const element = entry.target;
-        if (!entry.isIntersecting || seen.has(element)) return;
-        seen.add(element);
-        // Stop observing before a transform can change this entry's geometry.
+        if (!entry.isIntersecting) return;
         observer.unobserve(element);
-        // Deep links and keyboard focus show the complete destination immediately.
-        if (!canAnimate() || forcedColors.matches || element.closest('section') === initialAnchor || element.contains(document.activeElement)) {
-          return;
+        const animation = entranceAnimations.get(element);
+        if (!animation || animation.playState === 'idle') return;
+        if (!canAnimate() || forcedColors.matches || element.contains(document.activeElement)) {
+          animation.cancel();
+        } else {
+          animation.play();
         }
-        const {frames, duration, delay} = specs.get(element);
-        const animation = animate(element, frames, {duration, delay, easing:'cubic-bezier(.16,1,.3,1)', fill:'backwards'});
-        if (!animation) return;
-        entranceAnimations.set(element, animation);
-        animation.finished.catch(() => {}).finally(() => {
-          if (entranceAnimations.get(element) === animation) entranceAnimations.delete(element);
-        });
       });
-    }, {threshold:.01, rootMargin:'0px 0px -8% 0px'});
-    specs.forEach((_, element) => observer.observe(element));
+    }, {threshold:0, rootMargin:'0px 0px -72px 0px'});
+    // Apply the first frame out of sight; keep it paused until it can actually be seen.
+    // Measure before writing styles so all entries share the same settled layout.
+    const pending = [...specs].filter(([element]) => element.getBoundingClientRect().top > window.innerHeight && element.closest('section') !== initialAnchor && !element.contains(document.activeElement));
+    if (canAnimate() && !forcedColors.matches) pending.forEach(([element,{frames,duration,delay}]) => {
+      const animation = animate(element, frames, {duration, delay, easing:'cubic-bezier(.22,.75,.25,1)', fill:'backwards'});
+      if (!animation) return;
+      animation.pause();
+      animation.currentTime = 0;
+      entranceAnimations.set(element, animation);
+      animation.finished.catch(() => {}).finally(() => {
+        if (entranceAnimations.get(element) === animation) entranceAnimations.delete(element);
+      });
+      observer.observe(element);
+    });
     const settleFocused = event => entranceAnimations.forEach((animation, element) => {
       if (element.contains(event.target)) animation.cancel();
     });
     document.addEventListener('focusin', settleFocused);
-    document.addEventListener('pointerdown', settleFocused);
+    document.addEventListener('pointerdown', event => {
+      // A touch on a heading can begin scrolling: it must not snap the heading to its end.
+      if (event.target instanceof Element && event.target.closest('a[href],button,input,select,textarea,summary,[role="button"],[role="tab"],[contenteditable="true"]')) settleFocused(event);
+    });
   }
-  setupSectionEntrances();
+  // Font swaps must finish before preparing the text geometry.
+  const startEntrances = () => {
+    if (document.hidden) {
+      document.addEventListener('visibilitychange', startEntrances, {once:true});
+      return;
+    }
+    setupSectionEntrances();
+  };
+  if (document.fonts?.ready) document.fonts.ready.then(startEntrances);
+  else startEntrances();
 
   const descriptions = {
     site: 'Dal primo sguardo alla prenotazione: un sito pensato per il tuo ristorante, seguito nel tempo.',
@@ -344,19 +344,25 @@
   };
   const productStage = document.querySelector('.product-stage');
   const devices = [...productStage.querySelectorAll('.device')];
-  document.querySelectorAll('[data-service]').forEach(button => {
+  const serviceButtons = [...document.querySelectorAll('[data-service]')];
+  serviceButtons.forEach(button => {
     button.addEventListener('click', () => {
       // FLIP: una misura prima/dopo, poi soltanto trasformazioni per fotogramma.
-      const before = devices.map(device => device.getBoundingClientRect());
+      const mobile = mobileViewport.matches;
+      const before = mobile ? [] : devices.map(device => device.getBoundingClientRect());
       devices.forEach(device => device.getAnimations().forEach(animation => animation.cancel()));
-      document.querySelectorAll('[data-service]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      serviceButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
       productStage.dataset.focus = button.dataset.service;
       productStage.classList.add('has-selected');
       devices.forEach((device, index) => {
         device.dataset.active = String(device.dataset.device === button.dataset.service);
       });
-      const after = devices.map(device => device.getBoundingClientRect());
+      const after = mobile ? [] : devices.map(device => device.getBoundingClientRect());
       devices.forEach((device,index) => {
+        if (mobile) {
+          if (device.dataset.active === 'true') animate(device, [{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'none'}], {duration:320,easing:'cubic-bezier(.2,.8,.2,1)'});
+          return;
+        }
         const old = before[index], next = after[index];
         animate(device, [
           {transform:`translate(${old.left-next.left}px,${old.top-next.top}px) scale(${old.width/next.width},${old.height/next.height})`},
@@ -364,9 +370,7 @@
         ], {duration:520,easing:'cubic-bezier(.2,.8,.2,1)'});
       });
       document.getElementById('service-detail').textContent = descriptions[button.dataset.service];
-      if (window.matchMedia('(max-width: 680px)').matches && productStage.getBoundingClientRect().top < 100) {
-        productStage.scrollIntoView({block:'start',behavior:canAnimate() ? 'smooth' : 'instant'});
-      }
+      document.getElementById('service-caption').textContent = button.querySelector('strong + span').textContent;
     });
   });
 
@@ -439,19 +443,30 @@
     if (detail.open) animate(detail.querySelector('p'), [{opacity:.6,transform:'translateY(-3px)'},{opacity:1,transform:'none'}], {duration:180,easing:'cubic-bezier(.2,.8,.2,1)'});
   }));
 
-  document.getElementById('year').textContent = new Date().getFullYear();
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
-  const email = form.elements.namedItem('email');
   const phone = form.elements.namedItem('phone');
-  [email,phone].forEach(input => input.addEventListener('input', () => {
+  const requiredText = ['name','restaurant'].map(name => form.elements.namedItem(name));
+  const invalidateEmail = () => {
     phone.setCustomValidity('');
-    status.textContent = '';
-  }));
+    requiredText.forEach(input => input.setCustomValidity(''));
+    status.replaceChildren();
+    delete status.dataset.state;
+  };
+  form.addEventListener('input', invalidateEmail);
+  form.addEventListener('change', invalidateEmail);
   form.addEventListener('submit', event => {
     event.preventDefault();
     phone.setCustomValidity('');
     const data = Object.fromEntries(['name','restaurant','email','phone','message'].map(key => [key,String(form.elements.namedItem(key).value).trim()]));
+    for (const input of requiredText) {
+      input.setCustomValidity('');
+      if (data[input.name].length < 2) {
+        input.setCustomValidity(input.name === 'name' ? 'Inserisci il tuo nome, con almeno due caratteri.' : 'Inserisci il nome del ristorante, con almeno due caratteri.');
+        input.reportValidity();
+        return;
+      }
+    }
     if (!data.email && !data.phone) {
       phone.setCustomValidity('Lascia almeno un numero di telefono o un indirizzo email.');
       phone.reportValidity();

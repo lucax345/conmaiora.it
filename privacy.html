@@ -1,120 +1,100 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" data-motion="on">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy e cookie · Maiora</title>
-<link rel="icon" href="/favicon.ico?v=2" sizes="32x32">
-<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
-<link rel="mask-icon" href="/favicon-mono.svg?v=2" color="#8e2436">
-<link rel="manifest" href="/manifest.webmanifest?v=2">
-<meta name="description" content="Il sito di Maiora non usa cookie, statistiche né tracciamenti. I messaggi che scrivi a info@conmaiora.it servono solo per risponderti.">
-<meta name="theme-color" content="#fed339">
-<link rel="canonical" href="https://conmaiora.it/privacy.html">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="it_IT">
-<meta property="og:site_name" content="Maiora">
-<meta property="og:title" content="Privacy e cookie · Maiora">
-<meta property="og:description" content="Il sito di Maiora non usa cookie, statistiche né tracciamenti. I messaggi che scrivi a info@conmaiora.it servono solo per risponderti.">
-<meta property="og:url" content="https://conmaiora.it/privacy.html">
-<meta property="og:image" content="https://conmaiora.it/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://conmaiora.it/og.png">
-<link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="pagine.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffbf4">
+  <meta name="description" content="Come Maiora tratta i dati di navigazione e le richieste di contatto. Informazioni su cookie, fornitori, conservazione e diritti.">
+  <link rel="canonical" href="https://conmaiora.it/privacy.html">
+  <title>Privacy e cookie — Maiora</title>
+  <link rel="icon" href="favicon.ico?v=2" sizes="32x32">
+  <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="mask-icon" href="favicon-mono.svg?v=2" color="#8e2436">
+  <link rel="manifest" href="manifest.webmanifest?v=2">
+  <link rel="preload" href="assets/cormorant-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/manrope-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=17-opt">
+  <link rel="stylesheet" href="privacy.css?v=17">
+  <script src="ui.js?v=17" defer></script>
 </head>
-<body>
-<a class="skip" href="#contenuto">Vai al contenuto</a>
-<div class="awning" aria-hidden="true"></div>
-<header class="top">
-  <a class="brand" href="./" aria-label="Maiora, pagina iniziale">Maiora</a>
-  <nav aria-label="Principale">
-    <ul>
-      <li><a href="/#come-funziona">Come funziona</a></li>
-      <li><a class="pill" href="./#contatti">Parliamone</a></li>
-    </ul>
-  </nav>
-</header>
-
-<main id="contenuto">
-  <section class="scene f-sun legal-head" aria-labelledby="titolo">
-    <div class="wrap">
-      <h1 class="display" id="titolo">Privacy e cookie.</h1>
-      <p class="lede"><strong>In breve: niente cookie, niente statistiche, niente tracciamenti.</strong> Se ci scrivi, usiamo il tuo messaggio solo per risponderti e per il preventivo che ci chiedi.</p>
+<body class="privacy-page" id="inizio">
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <header class="navigation">
+    <a class="brand" href="index.html" aria-label="Maiora, pagina iniziale">MAIORA<span aria-hidden="true">·</span></a>
+    <nav class="desktop-nav" aria-label="Navigazione principale"><a href="index.html">Torna al sito</a></nav>
+    <a class="button nav-contact" href="index.html#contatti">Parliamone</a>
+    <button class="menu-toggle" type="button" aria-haspopup="dialog" aria-controls="mobile-menu" aria-expanded="false">Menu<span class="menu-mark" aria-hidden="true"><i></i><i></i></span></button>
+  </header>
+  <dialog class="mobile-menu" id="mobile-menu" aria-labelledby="menu-title">
+    <div class="menu-heading"><p class="brand" id="menu-title">MAIORA<span aria-hidden="true">·</span></p><button class="menu-close" type="button" aria-label="Chiudi il menu">Chiudi <span aria-hidden="true">×</span></button></div>
+    <nav aria-label="Navigazione mobile"><a href="index.html">Torna al sito <span aria-hidden="true">↗</span></a><a href="index.html#contatti">Parliamone <span aria-hidden="true">↗</span></a></nav>
+    <a class="menu-email" href="mailto:info@conmaiora.it">info@conmaiora.it</a>
+  </dialog>
+  <main class="legal-main" id="contenuto">
+    <header class="legal-hero">
+      <img class="painting legal-hero-art" src="assets/06-apertura.webp" width="1774" height="887" alt="" fetchpriority="high">
+      <p class="section-label">Privacy e cookie</p>
+      <h1>I tuoi dati.<br><em>Con chiarezza.</em></h1>
+      <p class="legal-lede">Qui trovi come funziona questo sito e che cosa succede alle informazioni che scegli di condividere con noi.</p>
+      <ul class="legal-facts" aria-label="In breve"><li>Nessun cookie</li><li>Nessun tracciamento</li><li>Invii tu l’email</li></ul>
+    </header>
+    <div class="legal-layout section-shell">
+      <nav class="legal-toc" aria-label="Indice dell’informativa">
+        <p>In questa pagina</p>
+        <ol><li><a href="#titolare">Il titolare</a></li><li><a href="#contatto">Quando ci scrivi</a></li><li><a href="#navigazione">La navigazione</a></li><li><a href="#cookie">Cookie e demo</a></li><li><a href="#fornitori">I fornitori</a></li><li><a href="#conservazione">La conservazione</a></li><li><a href="#diritti">I tuoi diritti</a></li><li><a href="#aggiornamenti">Gli aggiornamenti</a></li></ol>
+      </nav>
+      <article class="legal-document" aria-label="Informativa sul trattamento dei dati personali">
+        <section class="legal-section" id="titolare" aria-labelledby="titolare-title">
+          <h2 id="titolare-title">Chi tratta i dati.</h2>
+          <p>Il titolare del trattamento è <strong>Luca Pompei, fondatore di Maiora</strong>. Per qualunque domanda sui tuoi dati puoi scrivere a <a href="mailto:info@conmaiora.it">info@conmaiora.it</a>.</p>
+          <p>Questa informativa riguarda il sito conmaiora.it e le richieste che ci invii attraverso i suoi recapiti.</p>
+        </section>
+        <section class="legal-section" id="contatto" aria-labelledby="contatto-title">
+          <h2 id="contatto-title">Quando ci scrivi.</h2>
+          <p>Se ci contatti, riceviamo il tuo indirizzo email e le informazioni che inserisci nel messaggio, per esempio nome, ristorante e telefono. Le usiamo per risponderti e per preparare il preventivo che ci chiedi. La base giuridica è l’esecuzione di misure precontrattuali adottate su tua richiesta (art. 6, par. 1, lett. b del GDPR).</p>
+          <p>Il modulo «Parliamone» prepara un’email: per compilarlo servono nome, ristorante e almeno un recapito, telefono o email. Il messaggio è facoltativo. <strong>Il sito non spedisce il modulo a un server</strong>: dopo aver preparato il testo, scegli tu se aprirlo e inviarlo dalla tua app di posta.</p>
+          <p>Scriverci è facoltativo. Senza un recapito non possiamo rispondere alla tua richiesta. La casella di lettura dell’informativa non è un consenso a comunicazioni promozionali.</p>
+        </section>
+        <section class="legal-section" id="navigazione" aria-labelledby="navigazione-title">
+          <h2 id="navigazione-title">Quando visiti il sito.</h2>
+          <p>Il sito è ospitato su GitHub Pages. GitHub registra gli indirizzi IP dei visitatori per ragioni di sicurezza, anche quando non hanno un account GitHub. Per questo trattamento opera come titolare autonomo, secondo la propria <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">informativa sulla privacy</a>.</p>
+          <p>Noi non riceviamo quei dati e non usiamo strumenti per contare le visite o identificare chi naviga sul sito.</p>
+        </section>
+        <section class="legal-section" id="cookie" aria-labelledby="cookie-title">
+          <h2 id="cookie-title">Cookie ed esempi degli assistenti.</h2>
+          <p>Il sito non usa cookie, strumenti di analisi delle visite o altri sistemi di tracciamento. Font, immagini e script sono ospitati insieme al sito. Le interazioni e la scelta di mettere in pausa le animazioni non vengono salvate in archivi del browser.</p>
+          <p>Gli esempi degli assistenti sono <strong>conversazioni dimostrative predefinite</strong>: funzionano nel browser e non contattano servizi di intelligenza artificiale. Il personaggio segue il puntatore per animare lo sguardo; questi movimenti non vengono registrati né inviati.</p>
+          <p>Non prendiamo decisioni automatizzate su di te e non facciamo profilazione. Per il funzionamento descritto non è previsto un banner dei cookie.</p>
+        </section>
+        <section class="legal-section" id="fornitori" aria-labelledby="fornitori-title">
+          <h2 id="fornitori-title">I fornitori e i trasferimenti.</h2>
+          <p><strong>GitHub Pages.</strong> Il servizio è fornito da GitHub, Inc., con sede negli Stati Uniti. Gli indirizzi IP raccolti per sicurezza possono essere trattati lì. GitHub dichiara la propria adesione al quadro UE-USA sulla protezione dei dati (Data Privacy Framework), oggetto di una decisione di adeguatezza della Commissione europea ai sensi dell’art. 45 GDPR. I dettagli sono nella <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement#data-privacy-framework-dpf">nota di GitHub sul Data Privacy Framework</a>.</p>
+          <p><strong>La posta elettronica.</strong> La casella info@conmaiora.it è fornita da Hostinger International Ltd, con sede a Cipro, nell’Unione europea. Per i trasferimenti fuori dall’Unione europea Hostinger prevede le clausole contrattuali standard approvate dalla Commissione europea (art. 46 GDPR), secondo la sua <a href="https://www.hostinger.com/legal/privacy-policy">informativa sulla privacy</a>.</p>
+        </section>
+        <section class="legal-section" id="conservazione" aria-labelledby="conservazione-title">
+          <h2 id="conservazione-title">Per quanto tempo.</h2>
+          <p>Conserviamo i messaggi per il tempo necessario a seguire la tua richiesta, poi li cancelliamo. I dati di navigazione raccolti da GitHub per sicurezza sono conservati secondo i criteri indicati nella sua <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">informativa sulla privacy</a>.</p>
+        </section>
+        <section class="legal-section" id="diritti" aria-labelledby="diritti-title">
+          <h2 id="diritti-title">I tuoi diritti.</h2>
+          <p>Nei casi previsti dal GDPR puoi chiedere l’accesso ai tuoi dati, la rettifica, la cancellazione, la limitazione del trattamento e la portabilità; puoi inoltre opporti al trattamento quando ne ricorrono le condizioni (artt. 15–22 GDPR). Per esercitare questi diritti scrivi a <a href="mailto:info@conmaiora.it">info@conmaiora.it</a>.</p>
+          <p>Se ritieni che il trattamento dei tuoi dati non rispetti la normativa, puoi presentare un reclamo al <a href="https://www.garanteprivacy.it/">Garante per la protezione dei dati personali</a>.</p>
+        </section>
+        <section class="legal-section" id="aggiornamenti" aria-labelledby="aggiornamenti-title">
+          <h2 id="aggiornamenti-title">Una nota aggiornata.</h2>
+          <p>Se il funzionamento del sito o il trattamento dei dati cambiano, aggiorniamo questa pagina e la data della revisione.</p>
+          <p class="legal-updated">Ultimo aggiornamento: <time datetime="2026-10-21">21 ottobre 2026</time>.</p>
+        </section>
+        <aside class="legal-question" aria-labelledby="privacy-question">
+          <h2 id="privacy-question">Una domanda sui tuoi dati?</h2>
+          <a class="button button-primary" href="mailto:info@conmaiora.it?subject=Privacy%20e%20dati%20personali">Scrivici<span class="button-dot" aria-hidden="true"></span></a>
+        </aside>
+      </article>
     </div>
-  </section>
-
-  <section class="scene f-sky legal" aria-label="Il testo per intero">
-    <div class="wrap doc">
-      <section aria-labelledby="h-titolare">
-        <h2 id="h-titolare">Chi è il titolare</h2>
-        <div class="body">
-          <p>Il titolare del trattamento dei dati è Luca Pompei, fondatore di Maiora. Per qualunque domanda sui tuoi dati scrivi a <a href="mailto:info@conmaiora.it">info@conmaiora.it</a>.</p>
-        </div>
-      </section>
-      <section aria-labelledby="h-dati">
-        <h2 id="h-dati">Quali dati e perché</h2>
-        <div class="body">
-          <p><b>Quando visiti il sito.</b> GitHub, che ospita il sito, registra l'indirizzo IP di chi visita i siti di GitHub Pages per motivi di sicurezza, anche se non ha un account GitHub. Lo fa come titolare autonomo, secondo la propria <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">informativa sulla privacy</a>. Noi non riceviamo questi dati e non sappiamo chi visita il sito.</p>
-          <p><b>Quando ci scrivi.</b> Se scrivi a <a href="mailto:info@conmaiora.it">info@conmaiora.it</a>, anche partendo dal modulo «Parliamone», riceviamo il tuo indirizzo email e quello che metti nel messaggio, per esempio nome, ristorante e telefono. Li usiamo solo per risponderti e per preparare il preventivo che ci chiedi (art. 6.1.b del GDPR).</p>
-          <p>Il modulo non spedisce niente da solo: prepara il messaggio nella tua app di posta, e lo invii tu se vuoi. Scriverci è una tua scelta; senza nome e telefono non possiamo richiamarti.</p>
-          <p>Non prendiamo decisioni automatiche su di te e non facciamo profilazione.</p>
-        </div>
-      </section>
-      <section aria-labelledby="h-tempo">
-        <h2 id="h-tempo">Per quanto tempo</h2>
-        <div class="body">
-          <p>I tuoi messaggi li conserviamo per il tempo necessario a seguire la tua richiesta, poi li cancelliamo. Gli indirizzi IP registrati per sicurezza li conserva GitHub, secondo la sua <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">informativa sulla privacy</a>.</p>
-        </div>
-      </section>
-      <section aria-labelledby="h-fornitori">
-        <h2 id="h-fornitori">I fornitori</h2>
-        <div class="body">
-          <p>Il sito è ospitato da GitHub Pages, un servizio di GitHub, Inc., che ha sede negli Stati Uniti.</p>
-          <p>La casella info@conmaiora.it è fornita da Hostinger International Ltd (Cipro, Unione europea). Se Hostinger tratta dati fuori dall'Unione europea, usa le clausole contrattuali standard approvate dalla Commissione europea (art. 46 GDPR). I dettagli sono nell'<a href="https://www.hostinger.com/legal/privacy-policy">informativa sulla privacy di Hostinger</a>.</p>
-        </div>
-      </section>
-      <section aria-labelledby="h-usa">
-        <h2 id="h-usa">Dati negli Stati Uniti</h2>
-        <div class="body">
-          <p>Poiché GitHub ha sede negli Stati Uniti, l'indirizzo IP registrato quando visiti il sito può essere trattato lì. GitHub ha certificato al Dipartimento del Commercio degli Stati Uniti di aderire al quadro UE-USA sulla protezione dei dati (Data Privacy Framework), per il quale la Commissione europea ha adottato una decisione di adeguatezza (art. 45 GDPR).</p>
-        </div>
-      </section>
-      <section aria-labelledby="h-diritti">
-        <h2 id="h-diritti">I tuoi diritti</h2>
-        <div class="body">
-          <p>Puoi chiederci di vedere i dati che abbiamo su di te, di correggerli o cancellarli, di limitarne l'uso, di opporti al trattamento e di riceverli in un formato da portare altrove (artt. 15–22 del GDPR). Basta scrivere a <a href="mailto:info@conmaiora.it">info@conmaiora.it</a>.</p>
-          <p>Se pensi che i tuoi dati siano trattati in modo scorretto, puoi presentare reclamo al <a href="https://www.garanteprivacy.it/">Garante per la protezione dei dati personali</a>.</p>
-        </div>
-      </section>
-      <section aria-labelledby="h-cookie">
-        <h2 id="h-cookie">Cookie</h2>
-        <div class="body">
-          <p>Nessuno. Il sito non usa cookie né altri archivi del browser, non conta le visite, non usa strumenti di tracciamento e non carica servizi di altre aziende: anche il carattere tipografico è ospitato qui. Per questo non ti chiediamo nessun consenso e non trovi un banner dei cookie.</p>
-        </div>
-      </section>
-      <section aria-labelledby="h-modifiche">
-        <h2 id="h-modifiche">Modifiche a questa nota</h2>
-        <div class="body">
-          <p>Se cambia qualcosa, aggiorniamo questa pagina e la data qui sotto.</p>
-          <p class="updated">Ultimo aggiornamento: 7 ottobre 2026.</p>
-        </div>
-      </section>
-    </div>
-  </section>
-</main>
-
-<footer class="foot">
-  <div class="wrap">
-    <p><b>Maiora</b> · <a href="mailto:info@conmaiora.it">info@conmaiora.it</a> · Per i ristoranti, a cominciare da Roma. © 2026 Maiora</p>
-    <ul>
-      <li><a href="/#come-funziona">Come funziona</a></li>
-      <li><a href="privacy.html" aria-current="page">Privacy e cookie</a></li>
-    </ul>
-  </div>
-</footer>
+  </main>
+  <footer class="site-footer section-shell footer-fountain-scene motion-scene"><svg class="painting footer-garden" width="1774" height="887" viewBox="0 0 1774 887" aria-hidden="true" focusable="false"><defs><clipPath id="footer-water-jet"><path d="M1551 698 Q1547 746 1535 788 L1528 834 L1571 834 L1570 784 Q1560 745 1573 700Z"/></clipPath><filter id="footer-water-soft"><feGaussianBlur stdDeviation="1.5"/></filter></defs><image href="assets/11-giardino-romano.webp" width="1774" height="887"/><g class="water-motion motion-detail" fill="none" stroke-linecap="round" filter="url(#footer-water-soft)"><g clip-path="url(#footer-water-jet)"><path class="water-flow" d="M1563 680 Q1555 719 1551 741 M1550 761 Q1542 791 1541 812 M1540 832 L1539 852" stroke="#e0eee9" stroke-width="5"/><path class="water-flow water-flow-two" d="M1555 692 Q1547 725 1545 751 M1544 773 Q1536 797 1536 821 M1535 840 L1532 857" stroke="#73a5b5" stroke-width="3"/></g><ellipse class="water-ring" cx="1545" cy="845" rx="32" ry="4" stroke="#72a2b4" stroke-width="2.2"/><ellipse class="water-ring water-ring-two" cx="1545" cy="845" rx="32" ry="4" stroke="#72a2b4" stroke-width="2"/></g></svg><div class="footer-art-side footer-art-left" aria-hidden="true"><svg class="painting footer-garden" width="1774" height="887" viewBox="0 0 1774 887" aria-hidden="true" focusable="false"><image href="assets/11-giardino-romano.webp" width="1774" height="887"/></svg></div><div class="footer-art-side footer-art-right" aria-hidden="true"><svg class="painting footer-garden" width="1774" height="887" viewBox="0 0 1774 887" aria-hidden="true" focusable="false"><defs><clipPath id="mobile-footer-water-jet"><path d="M1551 698 Q1547 746 1535 788 L1528 834 L1571 834 L1570 784 Q1560 745 1573 700Z"/></clipPath><filter id="mobile-footer-water-soft"><feGaussianBlur stdDeviation="1.5"/></filter></defs><image href="assets/11-giardino-romano.webp" width="1774" height="887"/><g class="water-motion motion-detail" fill="none" stroke-linecap="round" filter="url(#mobile-footer-water-soft)"><g clip-path="url(#mobile-footer-water-jet)"><path class="water-flow" d="M1563 680 Q1555 719 1551 741 M1550 761 Q1542 791 1541 812 M1540 832 L1539 852" stroke="#e0eee9" stroke-width="5"/><path class="water-flow water-flow-two" d="M1555 692 Q1547 725 1545 751 M1544 773 Q1536 797 1536 821 M1535 840 L1532 857" stroke="#73a5b5" stroke-width="3"/></g><ellipse class="water-ring" cx="1545" cy="845" rx="32" ry="4" stroke="#72a2b4" stroke-width="2.2"/><ellipse class="water-ring water-ring-two" cx="1545" cy="845" rx="32" ry="4" stroke="#72a2b4" stroke-width="2"/></g></svg></div><a class="brand" href="index.html" aria-label="Maiora, pagina iniziale">MAIORA<span aria-hidden="true">·</span></a><p>Da Roma, verso cose più grandi.</p><nav aria-label="Navigazione finale"><a href="index.html#servizio">Il servizio</a><a href="index.html#assistente">Gli assistenti</a><a href="index.html#come-funziona">Come funziona</a><a href="mailto:info@conmaiora.it">Scrivici</a></nav><div><a href="privacy.html" aria-current="page">Privacy</a><a href="#inizio">Torna su ↑</a><span>© <span id="year">2026</span> Maiora</span><button class="motion-toggle" type="button" aria-label="Animazioni" aria-pressed="true" title="Metti in pausa le animazioni" hidden>
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><g class="motion-pause"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></g><path class="motion-play" d="m9 5 10 7-10 7Z" fill="currentColor"/></svg><span>Animazioni</span>
+  </button></div></footer>
 </body>
 </html>
