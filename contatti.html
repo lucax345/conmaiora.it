@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Scrivi a Maiora. Raccontaci il tuo locale</title>
+<meta name="description" content="Due righe bastano: che cucina fai, quanti coperti hai, cosa vuoi toglierti dai pensieri. Ti risponde una persona. info@conmaiora.it">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Scrivi a Maiora. Raccontaci il tuo locale">
+<meta property="og:description" content="Due righe bastano: che cucina fai, quanti coperti hai, cosa vuoi toglierti dai pensieri. Ti risponde una persona. info@conmaiora.it">
+<meta property="og:image" content="https://conmaiora.it/og.png">
+<meta property="og:url" content="https://conmaiora.it/contatti.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://conmaiora.it/contatti.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#F6F5F1">
+<link rel="preload" href="assets/fonts/darker-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
+<header>
+  <nav class="nav" aria-label="Principale">
+    <a class="brand" href="index.html" aria-label="Maiora, inizio">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 12h6v30H6zM33 3h9v39h-9zM6 12h9l9 15 9-24h4.5L23.31 40.85zM3 42h12v3H3zM30 42h15v3H30zM3 12h6v3H3zM42 3h3v3h-3z"/></svg>
+      Maiora
+    </a>
+    <ul>
+      <li><a href="index.html#sito">Cosa fa</a></li>
+      <li><a href="index.html#come">Come si parte</a></li>
+      <li><a href="prezzi.html">Prezzi</a></li>
+    </ul>
+    <div class="r">
+      <a class="short" href="prezzi.html">Prezzi</a>
+      <a class="pill" href="contatti.html" aria-current="page">Scrivici</a>
+    </div>
+  </nav>
+</header>
+
+<main id="contenuto">
+<section class="page-head has-bell">
+  <h1>Raccontaci il tuo locale.</h1>
+  <p class="lede">Due righe bastano: che cucina fai, quanti coperti hai, cosa vuoi toglierti dai pensieri. Ti risponde una persona.</p>
+  <div class="act"><a class="pill big" href="#racconta">Scrivi qui sotto <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a><a class="link" href="mailto:info@conmaiora.it">info@conmaiora.it</a></div>
+</section>
+
+<section class="contact" aria-label="Scrivici">
+  <button class="bell" id="bell" type="button" aria-label="Suona il campanello e vai al modulo" data-wd-float>
+    <img src="assets/img/campanello.webp" alt="" width="760" height="736">
+    <svg class="rings" viewBox="0 0 100 100" aria-hidden="true"><path d="M52 44 A30 30 0 0 1 64 62"/><path d="M62 30 A46 46 0 0 1 80 58"/><path d="M72 16 A62 62 0 0 1 96 54"/></svg>
+  </button>
+
+  <form class="form" id="racconta" action="mailto:info@conmaiora.it" method="post" enctype="text/plain">
+    <h2>Scrivilo qui.</h2>
+    <p>Il pulsante apre la tua posta con il messaggio già scritto: lo controlli e lo invii tu.</p>
+    <div class="field-row">
+      <div><label for="f-locale">Come si chiama il locale</label><input id="f-locale" name="Locale" type="text" autocomplete="organization" required placeholder="Es. Trattoria del Borgo"></div>
+      <div><label for="f-citta">Dove si trova</label><input id="f-citta" name="Città" type="text" autocomplete="address-level2" placeholder="Es. Viterbo"></div>
+    </div>
+    <div class="field-row">
+      <div><label for="f-coperti">Quanti coperti, più o meno</label><input id="f-coperti" name="Coperti" type="text" inputmode="numeric" placeholder="Es. 48"></div>
+      <div><label for="f-contatto">Dove ti rispondiamo</label><input id="f-contatto" name="Contatto" type="text" autocomplete="email" placeholder="Email o telefono"></div>
+    </div>
+    <label for="f-racconto">Che cucina fai, e cosa vuoi toglierti dai pensieri</label>
+    <textarea id="f-racconto" name="Racconto" placeholder="Es. Cucina romana, pieni il sabato. Il sito è fermo a due anni fa e al telefono non rispondiamo mai."></textarea>
+    <div class="act">
+      <button class="pill big" type="submit">Apri l’email già scritta <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+    </div>
+    <p class="fine" id="f-done" role="status" hidden>Si è aperta la tua posta? Se non è successo niente, scrivi a info@conmaiora.it.</p>
+  </form>
+
+  <div class="next-steps">
+    <h2>Poi succede questo.</h2>
+    <ol>
+      <li><div><b>Ti rispondiamo.</b><span>Una persona, con le poche domande che servono a capire il locale.</span></div></li>
+      <li><div><b>Compili un modulo solo.</b><span>Menu, foto, orari, tavoli. Una volta, anche dal telefono.</span></div></li>
+      <li><div><b>Costruiamo sito e sala.</b><span>Quando è pronto ricevi l’accesso all’app, e il sito va online.</span></div></li>
+    </ol>
+    <p class="mail"><small>Oppure scrivi direttamente a</small><a href="mailto:info@conmaiora.it">info@conmaiora.it</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="cols3">
+    <div class="about">
+      <a class="brand" href="index.html" aria-label="Maiora, inizio">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 12h6v30H6zM33 3h9v39h-9zM6 12h9l9 15 9-24h4.5L23.31 40.85zM3 42h12v3H3zM30 42h15v3H30zM3 12h6v3H3zM42 3h3v3h-3z"/></svg>
+        Maiora
+      </a>
+      <p>Il sito, le prenotazioni e le risposte agli ospiti, per ristoranti, trattorie, pizzerie e osterie.</p>
+    </div>
+    <div>
+      <h3>Cosa fa</h3>
+      <ul>
+        <li><a href="index.html#sito">Il sito</a></li>
+        <li><a href="index.html#prenotazioni">Le prenotazioni</a></li>
+        <li><a href="index.html#risposte">Le risposte</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Per partire</h3>
+      <ul>
+        <li><a href="index.html#come">Come si parte</a></li>
+        <li><a href="prezzi.html">Prezzi</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Scrivici</h3>
+      <ul>
+        <li><a href="mailto:info@conmaiora.it">info@conmaiora.it</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="legal"><span>© 2026 Maiora</span><span>I prezzi sono IVA esclusa.</span></p>
+  <p class="word" aria-hidden="true" data-wd-crop>Maiora</p>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>
